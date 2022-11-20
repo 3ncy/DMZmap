@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Al-Bagra Barrack key",
+        "description": "Used to unlock barracks of the al-bagra group in the fortess",
+        "behindTheLock": "Two rooms get unlocked by one use of the key. There is one big crate with valuable loot and a weapon in each.",
+        "imagePaths": [
+            "al-bagra_barrack_key-location.png",
+            "al-bagra_barrack_key-map.png"
+        ],
+        "coords": [
+            73,
+            870
+        ]
+    },
+    {
+        "name": "Scientist's locker key",
+        "description": "A key to a locker that belonged to a scientist.",
+        "behindTheLock": "The key opens one of the two lockers, the loot usually containst <u><b>????</b></u>",
+        "imagePaths": [
+            "scientists_locker_key-location.png",
+            "scientists_locker_key-map.png"
+        ],
+        "coords": [
+            502.949305,
+            700.126622
+        ]
+    }
+]

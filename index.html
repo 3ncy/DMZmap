@@ -52,26 +52,30 @@
         }
         map.on('click', onMapClick);
 
-        //NOTE: in case this becomes map for more than keys, repurpuse this. There's prolly gonna be only the "Desc" variable and it will include all the needed HTML for formatting.
-        //TODO: read these from external file
-        let popupName = "Al-Bagra Barrack key";
-        let popupDesc = "Used to unlock barracks of the al-bagra group in the fortess";
-        let popupBehindTheLock = "Two rooms get unlocked by one use of the key. There is one big crate with valuable loot and a weapon in each.";
-        let popupImgPaths = ["al-bagra_barrack_key-location.png", "al-bagra_barrack_key-map.png"]
-        //TODO: read all images until there's like empty line in the file or sth
 
-        let markerHTML = `<div><h3>${popupName}</h3>
-            <p><b>Description: </b>${popupDesc}</p>
-            <p><b>Behind the lock: </b>${popupBehindTheLock}</p>`
-        for (let path of popupImgPaths) {
-            markerHTML += `<img class="popupImg" src="./images/${path}"></div>`;
-        }
 
-        let aa = L.latLng(73, 870);
-        L.marker(aa).addTo(map).bindPopup(markerHTML);
+
+
+        fetch('./keys.json')
+            .then((response) => response.json())
+            .then((keys) => {
+                for (let keyInfo of keys) {
+                    let markerHTML = `<div><h3>${keyInfo.name}</h3>
+                        <p><b>Description: </b>${keyInfo.description}</p>
+                        <p><b>Behind the lock: </b>${keyInfo.behindTheLock}</p>`;
+                    //NOTE: in case this becomes map for more than keys, repurpuse this. There's prolly gonna be only the "Desc" variable and it will include all the needed HTML for formatting.
+                    for (let path of keyInfo.imagePaths) {
+                        markerHTML += `<img class="popupImg" src="./images/${path}"></div>`;
+                    }
+
+                    //TODO: add icons to the keys that have special icons
+                    L.marker(L.latLng(keyInfo.coords)).addTo(map).bindPopup(markerHTML);
+                }
+            });
+
 
         //TODO: create a bigger size of the image:
-        //a big div that is opened when you click the smaller image and has set img src to the image. Then you can close it by either hitting ESC or sth like that 
+        //a big div that is opened when you click the smaller image and has set img src to the image. Then you can close it by either hitting ESC or sth like that
 
     </script>
 </body>
