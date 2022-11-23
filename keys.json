@@ -4,7 +4,7 @@
         "description": "Used to unlock barracks of the al-bagra group in the fortess",
         "behindTheLock": "Two rooms get unlocked by one use of the key. There is one big crate with valuable loot and a weapon in each.",
         "imagePaths": [
-            "al-bagra_barrack_key-location.png",
+            "al-bagra_barrack_key-door.png",
             "al-bagra_barrack_key-map.png"
         ],
         "coords": [
@@ -17,12 +17,66 @@
         "description": "A key to a locker that belonged to a scientist.",
         "behindTheLock": "The key opens one of the two lockers, the loot usually containst <u><b>????</b></u>",
         "imagePaths": [
-            "scientists_locker_key-location.png",
+            "scientists_locker_key-door.png",
             "scientists_locker_key-map.png"
         ],
         "coords": [
             502.949305,
             700.126622
+        ]
+    },
+    {
+        "name": "Sawah Crypto Mining Farm",
+        "description": "??",
+        "behindTheLock": "Prolly computers? <i><b>???</b></i>",
+        "imagePaths": [
+            "sawah_crypto_mining_farm-door.png"
+        ],
+        "coords": [
+            124.375,
+            403.562
+        ]
+    },
+    {
+        "name": "ITHAQ Warehouse Supply Room",
+        "description": "??",
+        "behindTheLock": "??",
+        "imagePaths": [
+            "ithaq_warehouse_supply_room-door.png",
+            "ithaq_warehouse_supply_room-map.png"
+        ],
+        "coords": [
+            427.596445,
+            289.982807
+        ]
+    },
+    {
+        "name": "?? bank key ??",
+        "description": "",
+        "behindTheLock": "2 computers, orange crate, loose money spawn",
+        "imagePaths": [],
+        "coords": [
+            141.125,
+            402.6875
+        ]
+    },
+    {
+        "name": "captain stash??",
+        "description": "",
+        "behindTheLock": "",
+        "imagePaths": [],
+        "coords": [
+            22.75,
+            601.75
+        ]
+    },
+    {
+        "name": "Deckhand's toolbox",
+        "description": "",
+        "behindTheLock": "one toolbox, maybe with guaranteed money",
+        "imagePaths": [],
+        "coords": [
+            21.6875, 605.0625
         ]
     }
 ]

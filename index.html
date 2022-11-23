@@ -53,20 +53,11 @@
         map.on('click', onMapClick);
 
 
-
-
-
         fetch('./keys.json')
             .then((response) => response.json())
             .then((keys) => {
                 for (let keyInfo of keys) {
-                    let markerHTML = `<div><h3>${keyInfo.name}</h3>
-                        <p><b>Description: </b>${keyInfo.description}</p>
-                        <p><b>Behind the lock: </b>${keyInfo.behindTheLock}</p>`;
-                    //NOTE: in case this becomes map for more than keys, repurpuse this. There's prolly gonna be only the "Desc" variable and it will include all the needed HTML for formatting.
-                    for (let path of keyInfo.imagePaths) {
-                        markerHTML += `<img class="popupImg" src="./images/${path}"></div>`;
-                    }
+                    let markerHTML = generateKeyHTML(keyInfo);
 
                     //TODO: add icons to the keys that have special icons
                     L.marker(L.latLng(keyInfo.coords)).addTo(map).bindPopup(markerHTML);
@@ -75,8 +66,28 @@
             });
 
 
-        //TODO: create a bigger size of the image:
+        //TODO: create a bigger size of the images in popups:
         //a big div that is opened when you click the smaller image and has set img src to the image. Then you can close it by either hitting ESC or sth like that
+
+
+
+            //TODO: searching for keys - 
+            //look them up in the keys.json.
+            // When the matching key is found, open it's popup via map.openPopup(generateKeyHTML(findKey("keyname")))
+
+
+
+        // ------ functions: ------
+        function generateKeyHTML(keyInfo) {
+            let markerHTML = `<div><h3>${keyInfo.name}</h3>
+                        <p><b>Description: </b>${keyInfo.description}</p>
+                        <p><b>Behind the lock: </b>${keyInfo.behindTheLock}</p>`;
+            //NOTE: in case this becomes map for more than keys, repurpuse this. There's prolly gonna be only the "Desc" variable and it will include all the needed HTML for formatting.
+            for (let path of keyInfo.imagePaths) {
+                markerHTML += `<img class="popupImg" src="./images/${path}"></div>`;
+            }
+            return markerHTML;
+        }
 
     </script>
 </body>
